@@ -3,10 +3,10 @@
 
 import { useState, useEffect } from 'react';
 import { Plus, Trash2, Loader2, Tag, Ruler, Image as ImageIcon, Building, Palette, Info, Type } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { useToast } from '@/hooks/use-toast';
+import { Button } from '../../../components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../../components/ui/card';
+import { Input } from '../../../components/ui/input';
+import { useToast } from '../../../hooks/use-toast';
 import {
   addSettingItem,
   deleteSettingItem,
@@ -16,18 +16,18 @@ import {
   type ThemeColors,
   type CompanyInfo,
   type FontSettings
-} from '@/services/settings-service';
+} from '../../../services/settings-service';
 import { useForm, FormProvider, useFormContext, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { Textarea } from '@/components/ui/textarea';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../../../components/ui/form';
+import { Textarea } from '../../../components/ui/textarea';
 import Image from 'next/image';
 import { Upload, X } from 'lucide-react';
-import { uploadBannerImage, uploadLogo } from '@/services/storage-service';
-import { useAppSettings } from '@/hooks/use-app-settings';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { cn } from '@/lib/utils';
+import { uploadBannerImage, uploadLogo } from '../../../services/storage-service';
+import { useAppSettings } from '../../../hooks/use-app-settings';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../../components/ui/select';
+import { cn } from '../../../lib/utils';
 
 
 function SettingsSection({
