@@ -6,8 +6,8 @@ import {
   Sheet,
   SheetContent,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
+} from "../../components/ui/sheet";
+import { Button } from "../../components/ui/button";
 
 export default function AdminLayout({
   children,
