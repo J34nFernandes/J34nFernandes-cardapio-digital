@@ -15,8 +15,8 @@ import {
   serverTimestamp,
   limit,
 } from "firebase/firestore";
-import { db } from "@/lib/firebase";
-import { type Coupon } from "@/types";
+import { db } from "../lib/firebase";
+import { type Coupon } from "../types";
 
 const COUPONS_COLLECTION = "coupons";
 
