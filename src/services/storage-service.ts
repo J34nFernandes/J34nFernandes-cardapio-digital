@@ -6,7 +6,7 @@ import {
   uploadBytes,
   getDownloadURL,
 } from "firebase/storage";
-import { auth } from "@/lib/firebase"; // Using auth to initialize storage
+import { auth } from "../lib/firebase"; // Using auth to initialize storage
 
 // This is a workaround to initialize storage without creating a new app instance
 const storage = getStorage(auth.app);
