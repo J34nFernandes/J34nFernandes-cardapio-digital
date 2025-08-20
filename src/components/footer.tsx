@@ -1,6 +1,6 @@
 "use client";
 
-import { useAppSettings } from "@/hooks/use-app-settings";
+import { useAppSettings } from "../hooks/use-app-settings";
 import { Utensils, Building, Truck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
