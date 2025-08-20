@@ -8,15 +8,15 @@ import dynamic from 'next/dynamic';
 import { format, subDays, startOfMonth, endOfMonth, isWithinInterval } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
-import { type Order, type UserProfile } from "@/types";
-import { listenToOrders } from "@/services/order-service";
-import { listenToUsers } from "@/services/user-service";
-import { formatCurrency } from "@/lib/utils";
+import { type Order, type UserProfile } from "../../types";
+import { listenToOrders } from "../../services/order-service";
+import { listenToUsers } from "../../services/user-service";
+import { formatCurrency } from "../../lib/utils";
 
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../../components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../../components/ui/table";
+import { Badge } from "../../components/ui/badge";
+import { Button } from "../../components/ui/button";
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
