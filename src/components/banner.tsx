@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { listenToSettings, type BannerSettings } from "@/services/settings-service";
+import { listenToSettings, type BannerSettings } from "../services/settings-service";
 import { Skeleton } from "./ui/skeleton";
 
 export function Banner() {
