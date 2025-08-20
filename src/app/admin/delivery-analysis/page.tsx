@@ -6,13 +6,13 @@ import { Loader2, Truck, Clock, User, BarChart2, Star } from "lucide-react";
 import dynamic from 'next/dynamic';
 
 
-import { type Order } from "@/types";
-import { listenToOrders } from "@/services/order-service";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { listenToUsers } from "@/services/user-service";
-import { type UserProfile } from "@/types";
+import { type Order } from "../../../types";
+import { listenToOrders } from "../../../services/order-service";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../../../components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../../../components/ui/table";
+import { Avatar, AvatarFallback, AvatarImage } from "../../../components/ui/avatar";
+import { listenToUsers } from "../../../services/user-service";
+import { type UserProfile } from "../../../types";
 import { subDays, format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
