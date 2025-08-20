@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { ShoppingCart, Trash2, X, Plus, Minus } from "lucide-react";
-import { useCart } from "@/hooks/use-cart";
-import { Button } from "@/components/ui/button";
+import { useCart } from "../hooks/use-cart";
+import { Button } from "./ui/button";
 import {
   Sheet,
   SheetContent,
@@ -12,8 +12,8 @@ import {
   SheetTrigger,
   SheetFooter,
   SheetClose,
-} from "@/components/ui/sheet";
-import { formatCurrency } from "@/lib/utils";
+} from "./ui/sheet";
+import { formatCurrency } from "../lib/utils";
 import { ScrollArea } from "./ui/scroll-area";
 import { Separator } from "./ui/separator";
 import { CheckoutDialog } from "./checkout-dialog";
