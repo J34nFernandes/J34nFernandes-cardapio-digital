@@ -6,18 +6,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ShoppingCart, Minus, Plus, Loader2, Star } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { useCart } from "@/hooks/use-cart";
-import { formatCurrency, cn } from "@/lib/utils";
-import { useToast } from "@/hooks/use-toast";
-import { getProductById } from "@/services/product-service";
-import { type Product, type Review } from "@/types";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "../../../components/ui/button";
+import { Badge } from "../../../components/ui/badge";
+import { useCart } from "../../../hooks/use-cart";
+import { formatCurrency, cn } from "../../../lib/utils";
+import { useToast } from "../../../hooks/use-toast";
+import { getProductById } from "../../../services/product-service";
+import { type Product, type Review } from "../../../types";
+import { Skeleton } from "../../../components/ui/skeleton";
+import { Avatar, AvatarFallback, AvatarImage } from "../../../components/ui/avatar";
 import { format as formatDate } from "date-fns";
 import { ptBR } from "date-fns/locale";
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "../../../components/ui/separator";
 
 function ProductReviews({ product }: { product: Product }) {
     const averageRating = useMemo(() => {
