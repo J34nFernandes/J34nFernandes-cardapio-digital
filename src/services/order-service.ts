@@ -17,8 +17,8 @@ import {
   updateDoc,
   where,
 } from "firebase/firestore";
-import { db } from "@/lib/firebase";
-import { type Order, type OrderStatus } from "@/types";
+import { db } from "../lib/firebase";
+import { type Order, type OrderStatus } from "../types";
 
 const ORDERS_COLLECTION = "orders";
 
