@@ -16,8 +16,8 @@ import {
   serverTimestamp,
   Timestamp,
 } from "firebase/firestore";
-import { db } from "@/lib/firebase";
-import { type Product, type Review, type Order } from "@/types";
+import { db } from "../lib/firebase";
+import { type Product, type Review, type Order } from "../types";
 
 const PRODUCTS_COLLECTION = "products";
 
