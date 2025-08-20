@@ -7,16 +7,16 @@ import { ptBR } from "date-fns/locale";
 import dynamic from 'next/dynamic';
 
 
-import { type Order, OrderStatus } from "@/types";
-import { listenToOrders, updateOrderStatus, deleteOrder } from "@/services/order-service";
-import { formatCurrency } from "@/lib/utils";
+import { type Order, OrderStatus } from "../../../types";
+import { listenToOrders, updateOrderStatus, deleteOrder } from "../../../services/order-service";
+import { formatCurrency } from "../../../lib/utils";
 
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../../components/ui/select";
+import { Badge } from "../../../components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "../../../components/ui/card";
+import { Separator } from "../../../components/ui/separator";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../components/ui/tabs";
+import { Button } from "../../../components/ui/button";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -27,8 +27,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-import { useToast } from "@/hooks/use-toast";
+} from "../../../components/ui/alert-dialog";
+import { useToast } from "../../../hooks/use-toast";
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
