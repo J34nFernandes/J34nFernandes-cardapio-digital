@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Loader2, Package } from "lucide-react";
 
-import { type Product } from "@/types";
-import { listenToProducts } from "@/services/product-service";
-import { formatCurrency } from "@/lib/utils";
+import { type Product } from "../../../types";
+import { listenToProducts } from "../../../services/product-service";
+import { formatCurrency } from "../../../lib/utils";
 
 import {
   Table,
@@ -15,10 +15,10 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+} from "../../../components/ui/table";
+import { Badge } from "../../../components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "../../../components/ui/card";
+import { Button } from "../../../components/ui/button";
 
 export default function ListProductsPage() {
   const [products, setProducts] = useState<Product[]>([]);
