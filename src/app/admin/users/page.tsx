@@ -10,16 +10,16 @@ import { Loader2, Users, ShieldCheck, Truck, User, PlusCircle, Trash2 } from "lu
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
-import { type UserProfile } from "@/types";
-import { listenToUsers, updateUserRole } from "@/services/user-service";
-import { createUserFromAdmin, deleteUserAccount } from "@/services/auth-service";
+import { type UserProfile } from "../../../types";
+import { listenToUsers, updateUserRole } from "../../../services/user-service";
+import { createUserFromAdmin, deleteUserAccount } from "../../../services/auth-service";
 
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogFooter, DialogDescription, DialogClose } from "@/components/ui/dialog";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../../../components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../../../components/ui/table";
+import { Badge } from "../../../components/ui/badge";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../../components/ui/select";
+import { Button } from "../../../components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogFooter, DialogDescription, DialogClose } from "../../../components/ui/dialog";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -30,11 +30,11 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { useToast } from "@/hooks/use-toast";
-import { useAuth } from "@/hooks/use-auth";
+} from "../../../components/ui/alert-dialog";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../../../components/ui/form";
+import { Input } from "../../../components/ui/input";
+import { useToast } from "../../../hooks/use-toast";
+import { useAuth } from "../../../hooks/use-auth";
 import { useRouter } from "next/navigation";
 
 
