@@ -13,8 +13,8 @@ import {
   arrayRemove,
   getDoc,
 } from "firebase/firestore";
-import { db } from "@/lib/firebase";
-import { type UserProfile, type Address } from "@/types";
+import { db } from "../lib/firebase";
+import { type UserProfile, type Address } from "../types";
 import { v4 as uuidv4 } from 'uuid';
 
 const USERS_COLLECTION = "users";
