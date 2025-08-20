@@ -12,8 +12,8 @@ import {
   arrayRemove,
   writeBatch
 } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
-import { AppSettings, BannerSettings, CompanyInfo, FontSettings, ThemeColors } from '@/types';
+import { db } from '../lib/firebase';
+import { AppSettings, BannerSettings, CompanyInfo, FontSettings, ThemeColors } from '../types';
 
 
 const SETTINGS_COLLECTION = 'settings';
