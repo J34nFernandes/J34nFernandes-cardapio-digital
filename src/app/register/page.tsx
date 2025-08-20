@@ -11,7 +11,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Utensils, Loader2 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import {
   Form,
   FormControl,
@@ -19,13 +19,13 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { useToast } from "@/hooks/use-toast";
-import { signUp } from "@/services/auth-service";
-import { useAuth } from "@/hooks/use-auth";
-import { useAppSettings } from "@/hooks/use-app-settings";
+} from "../../components/ui/form";
+import { Input } from "../../components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../../components/ui/card";
+import { useToast } from "../../hooks/use-toast";
+import { signUp } from "../../services/auth-service";
+import { useAuth } from "../../hooks/use-auth";
+import { useAppSettings } from "../../hooks/use-app-settings";
 
 
 const formSchema = z.object({
