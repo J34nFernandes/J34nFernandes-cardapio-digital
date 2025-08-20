@@ -10,22 +10,22 @@ import { ptBR } from 'date-fns/locale';
 import dynamic from 'next/dynamic';
 
 
-import { type Coupon, type Order } from "@/types";
+import { type Coupon, type Order } from "../../../types";
 import {
   listenToCoupons,
   addCoupon,
   deleteCoupon,
-} from "@/services/coupon-service";
-import { listenToOrdersWithCoupon } from "@/services/order-service";
-import { useToast } from "@/hooks/use-toast";
-import { formatCurrency } from "@/lib/utils";
+} from "../../../services/coupon-service";
+import { listenToOrdersWithCoupon } from "../../../services/order-service";
+import { useToast } from "../../../hooks/use-toast";
+import { formatCurrency } from "../../../lib/utils";
 
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../../../components/ui/card";
+import { Button } from "../../../components/ui/button";
+import { Input } from "../../../components/ui/input";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../../../components/ui/form";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../../components/ui/select";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../../../components/ui/table";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -36,10 +36,10 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
-import { Textarea } from "@/components/ui/textarea";
+} from "../../../components/ui/alert-dialog";
+import { Badge } from "../../../components/ui/badge";
+import { Separator } from "../../../components/ui/separator";
+import { Textarea } from "../../../components/ui/textarea";
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
