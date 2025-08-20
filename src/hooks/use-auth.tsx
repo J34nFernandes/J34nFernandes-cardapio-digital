@@ -3,10 +3,10 @@
 
 import { createContext, useContext, useState, ReactNode, useEffect, useCallback } from "react";
 import { User, onAuthStateChanged, Unsubscribe } from "firebase/auth";
-import { auth as firebaseAuth, createUserProfileDocument } from "@/services/auth-service";
+import { auth as firebaseAuth, createUserProfileDocument } from "../services/auth-service";
 import { doc, onSnapshot } from "firebase/firestore";
-import { db } from "@/lib/firebase";
-import { type UserProfile } from "@/types";
+import { db } from "../lib/firebase";
+import { type UserProfile } from "../types";
 
 
 interface AuthContextType {
