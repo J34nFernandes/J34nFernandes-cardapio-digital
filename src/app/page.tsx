@@ -4,15 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { Utensils, GlassWater, ShoppingCart, User, Loader2, Beer, CupSoda, Droplets, Package as PackageIcon, Search, LogOut, X } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { type Product } from "@/types";
-import { formatCurrency, cn } from "@/lib/utils";
-import { CartSheet } from "@/components/cart-sheet";
-import { useCart } from "@/hooks/use-cart";
-import { useAuth } from "@/hooks/use-auth";
-import { signOutUser } from "@/services/auth-service";
-import { listenToProducts } from "@/services/product-service";
+import { Button } from "../components/ui/button";
+import { Card, CardContent } from "../components/ui/card";
+import { type Product } from "../types";
+import { formatCurrency, cn } from "../lib/utils";
+import { CartSheet } from "../components/cart-sheet";
+import { useCart } from "../hooks/use-cart";
+import { useAuth } from "../hooks/use-auth";
+import { signOutUser } from "../services/auth-service";
+import { listenToProducts } from "../services/product-service";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,15 +20,15 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "../components/ui/dropdown-menu";
 import React from "react";
 import { useRouter } from "next/navigation";
-import { Input } from "@/components/ui/input";
+import { Input } from "../components/ui/input";
 import { useDebounce } from "use-debounce";
-import { Banner } from "@/components/banner";
-import { DiscountPopup } from "@/components/discount-popup";
-import { useAppSettings } from "@/hooks/use-app-settings";
-import { Footer } from "@/components/footer";
+import { Banner } from "../components/banner";
+import { DiscountPopup } from "../components/discount-popup";
+import { useAppSettings } from "../hooks/use-app-settings";
+import { Footer } from "../components/footer";
 
 const categoryIcons: Record<string, React.ElementType> = {
   "Bebidas": CupSoda,
