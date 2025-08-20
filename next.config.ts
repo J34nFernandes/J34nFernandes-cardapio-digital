@@ -23,11 +23,6 @@ const nextConfig = {
       },
     ],
   },
-  webpack: (config, { isServer }) => {
-    const path = require('path');
-    config.resolve.alias['@'] = path.join(__dirname, 'src');
-    return config;
-  },
 };
 
 module.exports = nextConfig;
