@@ -2,7 +2,7 @@
 "use client";
 
 import { createContext, useContext, useState, ReactNode, useEffect } from "react";
-import { listenToSettings, type AppSettings } from "@/services/settings-service";
+import { listenToSettings, type AppSettings } from "../services/settings-service";
 
 interface AppSettingsContextType {
   settings: AppSettings | null;
