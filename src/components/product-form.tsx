@@ -1,14 +1,13 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Loader2, Wand2, Upload, X } from "lucide-react";
-import { useDebouncedCallback } from "use-debounce";
+import { Loader2, Upload, X } from "lucide-react";
 import Image from "next/image";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 import {
   Form,
   FormControl,
@@ -16,20 +15,17 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+} from "./ui/form";
+import { Input } from "./ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
-import { useToast } from "@/hooks/use-toast";
-import { getCategorySuggestions } from "@/app/actions";
-import { type Product } from "@/types";
-import { listenToSettings } from "@/services/settings-service";
+} from "./ui/select";
+import { type Product } from "../types";
+import { listenToSettings } from "../services/settings-service";
 import { Textarea } from "./ui/textarea";
 
 const formSchema = z.object({
@@ -63,9 +59,6 @@ type ProductFormProps = {
 };
 
 export function ProductForm({ onSubmit, isSubmitting, product }: ProductFormProps) {
-  const { toast } = useToast();
-  const [suggestions, setSuggestions] = useState<string[]>([]);
-  const [isSuggesting, setIsSuggesting] = useState(false);
   const [categories, setCategories] = useState<string[]>([]);
   const [units, setUnits] = useState<string[]>([]);
   const [isLoadingSettings, setIsLoadingSettings] = useState(true);
@@ -117,7 +110,6 @@ export function ProductForm({ onSubmit, isSubmitting, product }: ProductFormProp
   }, [product, form]);
 
 
-  const productName = form.watch("name");
   const imageFile = form.watch("imageFile");
 
   useEffect(() => {
@@ -144,38 +136,14 @@ export function ProductForm({ onSubmit, isSubmitting, product }: ProductFormProp
     return () => unsubscribe();
   }, []);
 
-  const debouncedSuggest = useDebouncedCallback(async (name) => {
-    if (name) {
-      setIsSuggesting(true);
-      const result = await getCategorySuggestions(name);
-      setSuggestions(result);
-      setIsSuggesting(false);
-    } else {
-      setSuggestions([]);
-    }
-  }, 500);
-
-  useEffect(() => {
-    debouncedSuggest(productName);
-  }, [productName, debouncedSuggest]);
-
-  const allCategories = Array.from(new Set([...categories, ...suggestions, product?.category || ''])).filter(Boolean);
-
-
   const handleFormSubmit = (values: ProductFormValues) => {
     onSubmit(values);
     if (!product) { // only reset form if it's for adding new product
         form.reset();
-        setSuggestions([]);
         setImagePreview(null);
     }
   };
 
-  const handleSuggestionClick = (suggestion: string) => {
-    form.setValue("category", suggestion, { shouldValidate: true });
-    setSuggestions([]);
-  };
-  
   const removeImage = () => {
     form.setValue("imageFile", undefined);
     form.setValue("imageUrl", ""); // Also clear existing imageUrl
@@ -222,7 +190,7 @@ export function ProductForm({ onSubmit, isSubmitting, product }: ProductFormProp
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          {allCategories.map((cat) => (
+                          {categories.map((cat) => (
                             <SelectItem key={cat} value={cat}>
                               {cat}
                             </SelectItem>
@@ -235,27 +203,6 @@ export function ProductForm({ onSubmit, isSubmitting, product }: ProductFormProp
                 />
               </div>
 
-               {(isSuggesting || suggestions.length > 0) && (
-                  <div className="flex items-center gap-2">
-                      {isSuggesting ? (
-                      <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
-                      ) : (
-                      <Wand2 className="h-5 w-5 text-accent" />
-                      )}
-                      <div className="flex flex-wrap gap-2">
-                      {suggestions.map((suggestion) => (
-                          <Badge
-                          key={suggestion}
-                          variant="outline"
-                          className="cursor-pointer transition-all hover:bg-accent/20"
-                          onClick={() => handleSuggestionClick(suggestion)}
-                          >
-                          {suggestion}
-                          </Badge>
-                      ))}
-                      </div>
-                  </div>
-              )}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                  <FormField
                     control={form.control}
