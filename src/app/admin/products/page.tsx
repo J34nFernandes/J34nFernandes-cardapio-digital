@@ -3,19 +3,19 @@
 
 import { useState, useEffect } from "react";
 import { Loader2 } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { useToast } from "../../../hooks/use-toast";
 
-import { type Product } from "@/types";
-import { ProductForm, type ProductFormValues } from "@/components/product-form";
-import { ProductTable } from "@/components/product-table";
-import { ProductChart } from "@/components/product-chart";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { type Product } from "../../../types";
+import { ProductForm, type ProductFormValues } from "../../../components/product-form";
+import { ProductTable } from "../../../components/product-table";
+import { ProductChart } from "../../../components/product-chart";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../../../components/ui/card";
 import {
   listenToProducts,
   addProduct,
   deleteProduct,
-} from "@/services/product-service";
-import { uploadProductImage } from "@/services/storage-service";
+} from "../../../services/product-service";
+import { uploadProductImage } from "../../../services/storage-service";
 
 export default function AdminProductsPage() {
   const [products, setProducts] = useState<Product[]>([]);
