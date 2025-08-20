@@ -3,15 +3,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Package, PanelLeft, Truck, ChevronsLeft, ChevronsRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useAppSettings } from "@/hooks/use-app-settings";
+import { Button } from "../../components/ui/button";
+import { useAppSettings } from "../../hooks/use-app-settings";
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
-} from "@/components/ui/sheet";
+} from "../../components/ui/sheet";
 import { usePathname } from 'next/navigation';
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 import React, { useState } from "react";
 
 
