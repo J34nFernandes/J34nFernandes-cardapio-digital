@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import dynamic from 'next/dynamic';
-import { type Product } from "@/types";
+import { type Product } from "../types";
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
