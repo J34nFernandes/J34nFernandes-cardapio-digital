@@ -11,9 +11,9 @@ import {
   User,
 } from "firebase/auth";
 import { doc, setDoc, getDoc, deleteDoc, serverTimestamp } from "firebase/firestore";
-import { db } from "@/lib/firebase";
-import { auth as firebaseAuth } from "@/lib/firebase";
-import { UserProfile } from "@/types";
+import { db } from "../lib/firebase";
+import { auth as firebaseAuth } from "../lib/firebase";
+import { UserProfile } from "../types";
 
 // Export auth to be used in other parts of the application, like the auth context.
 export const auth = firebaseAuth;
