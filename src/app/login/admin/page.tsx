@@ -32,6 +32,8 @@ const formSchema = z.object({
   password: z.string().min(6, { message: "A senha deve ter pelo menos 6 caracteres." }),
 });
 
+type AdminLoginFormValues = z.infer<typeof formSchema>;
+
 export default function AdminLoginPage() {
   const router = useRouter();
   const { toast } = useToast();
@@ -39,7 +41,7 @@ export default function AdminLoginPage() {
   const { user, userProfile, loadingAuth } = useAuth();
   const { settings, isLoading: isLoadingSettings } = useAppSettings();
 
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<AdminLoginFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
@@ -62,7 +64,7 @@ export default function AdminLoginPage() {
     }
   }, [user, userProfile, loadingAuth, router]);
 
-  const onSubmit = async (values: z.infer<typeof formSchema>>) => {
+  const onSubmit = async (values: AdminLoginFormValues) => {
     setIsLoading(true);
     const { error, user: signedInUser } = await signIn(values.email, values.password);
     
