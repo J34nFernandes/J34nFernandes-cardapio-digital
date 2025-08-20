@@ -7,7 +7,7 @@ import { z } from "zod";
 import axios from "axios";
 import { PatternFormat } from "react-number-format";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 import {
   Dialog,
   DialogContent,
@@ -16,7 +16,7 @@ import {
   DialogTrigger,
   DialogFooter,
   DialogClose,
-} from "@/components/ui/dialog";
+} from "./ui/dialog";
 import {
   Form,
   FormControl,
@@ -24,22 +24,22 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Textarea } from "@/components/ui/textarea";
-import { useCart } from "@/hooks/use-cart";
-import { useAuth } from "@/hooks/use-auth";
-import { useToast } from "@/hooks/use-toast";
-import { formatCurrency, cn } from "@/lib/utils";
-import { type Order, type Coupon, type Address } from "@/types";
-import { addOrder } from "@/services/order-service";
-import { getCouponByCode } from "@/services/coupon-service";
-import { addUserAddress } from "@/services/user-service";
+} from "./ui/form";
+import { Input } from "./ui/input";
+import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
+import { Textarea } from "./ui/textarea";
+import { useCart } from "../hooks/use-cart";
+import { useAuth } from "../hooks/use-auth";
+import { useToast } from "../hooks/use-toast";
+import { formatCurrency, cn } from "../lib/utils";
+import { type Order, type Coupon, type Address } from "../types";
+import { addOrder } from "../services/order-service";
+import { getCouponByCode } from "../services/coupon-service";
+import { addUserAddress } from "../services/user-service";
 import { Loader2, Search, Tag, Home, PlusCircle } from "lucide-react";
 import { Separator } from "./ui/separator";
 import { ScrollArea } from "./ui/scroll-area";
-import { useAppSettings } from "@/hooks/use-app-settings";
+import { useAppSettings } from "../hooks/use-app-settings";
 
 const addressSchema = z.object({
   cep: z.string().min(9, "O CEP deve ter 8 dígitos."),
