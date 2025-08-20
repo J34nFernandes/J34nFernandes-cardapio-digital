@@ -4,22 +4,22 @@ import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Loader2, Ban, DollarSign, CheckCircle, BarChart2, ListChecks, Calendar, CalendarCheck, Truck } from "lucide-react";
-import { useAuth } from "@/hooks/use-auth";
-import { listenToOrders, updateOrderStatus } from "@/services/order-service";
-import { type Order, OrderStatus } from "@/types";
-import { formatCurrency } from "@/lib/utils";
-import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "../../../hooks/use-auth";
+import { listenToOrders, updateOrderStatus } from "../../../services/order-service";
+import { type Order, OrderStatus } from "../../../types";
+import { formatCurrency } from "../../../lib/utils";
+import { useToast } from "../../../hooks/use-toast";
 import { subDays, format, isAfter, startOfDay, isSameDay } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import dynamic from 'next/dynamic';
 
 
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { DeliveryOrderCard } from "@/components/delivery-order-card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../../../components/ui/card";
+import { Button } from "../../../components/ui/button";
+import { DeliveryOrderCard } from "../../../components/delivery-order-card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../components/ui/tabs";
+import { ScrollArea } from "../../../components/ui/scroll-area";
+import { Badge } from "../../../components/ui/badge";
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
