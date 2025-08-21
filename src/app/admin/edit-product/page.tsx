@@ -2,18 +2,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useRouter, useParams }s from "next/navigation";
 import Link from "next/link";
 import { ChevronLeft, Loader2, Package } from "lucide-react";
 
-import { Button } from "../../../../components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../../../../components/ui/card";
-import { ProductForm, type ProductFormValues } from "../../../../components/product-form";
-import { useToast } from "../../../../hooks/use-toast";
-import { getProductById, updateProduct } from "../../../../services/product-service";
-import { uploadProductImage } from "../../../../services/storage-service";
-import { type Product } from "../../../../types";
-import { Skeleton } from "../../../../components/ui/skeleton";
+import { Button } from "../../../components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../../../components/ui/card";
+import { ProductForm, type ProductFormValues } from "../../../components/product-form";
+import { useToast } from "../../../hooks/use-toast";
+import { getProductById, updateProduct } from "../../../services/product-service";
+import { uploadProductImage } from "../../../services/storage-service";
+import { type Product } from "../../../types";
+import { Skeleton } from "../../../components/ui/skeleton";
 
 
 export default function EditProductPage() {
